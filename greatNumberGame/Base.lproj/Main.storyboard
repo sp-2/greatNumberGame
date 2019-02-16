@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,77 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="greatNumberGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am thinking of a number between 1 and 100!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQV-XR-OpB">
+                                <rect key="frame" x="14" y="83" width="347" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKt-g5-r9O">
+                                <rect key="frame" x="163" y="318" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="c4F-x6-t17"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwy-7k-YRu">
+                                <rect key="frame" x="163" y="398" width="50" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="6Ke-1R-DXI"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZ5-mI-jP7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Take a guess!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iaw-iD-9me">
+                                <rect key="frame" x="135" y="220" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Great Number Game" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujI-Yi-cEg">
+                                <rect key="frame" x="40" y="52" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lwy-7k-YRu" firstAttribute="top" secondItem="sKt-g5-r9O" secondAttribute="bottom" constant="50" id="3A2-AP-Hmc"/>
+                            <constraint firstItem="ujI-Yi-cEg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="8PM-ie-J36"/>
+                            <constraint firstItem="ujI-Yi-cEg" firstAttribute="centerX" secondItem="dQV-XR-OpB" secondAttribute="centerX" id="DHW-PH-mwp"/>
+                            <constraint firstItem="sKt-g5-r9O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jmv-2I-xPi"/>
+                            <constraint firstItem="dQV-XR-OpB" firstAttribute="top" secondItem="ujI-Yi-cEg" secondAttribute="bottom" constant="10" id="MEb-10-cY1"/>
+                            <constraint firstItem="dQV-XR-OpB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="14" id="lxr-5b-dGy"/>
+                            <constraint firstItem="ujI-Yi-cEg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="mjF-TJ-jXQ"/>
+                            <constraint firstItem="Iaw-iD-9me" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qPn-5j-069"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dQV-XR-OpB" secondAttribute="trailing" constant="14" id="r7g-JM-sks"/>
+                            <constraint firstItem="sKt-g5-r9O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="soC-1G-IXE"/>
+                            <constraint firstItem="Iaw-iD-9me" firstAttribute="top" secondItem="dQV-XR-OpB" secondAttribute="bottom" constant="10" id="tnr-vY-B7H"/>
+                            <constraint firstItem="Lwy-7k-YRu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v6C-Rr-fXj"/>
+                            <constraint firstItem="dQV-XR-OpB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wER-ue-26s"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="guessTextField" destination="sKt-g5-r9O" id="PAi-ou-hLf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
